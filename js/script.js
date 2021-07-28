@@ -10,6 +10,8 @@ const root = new Vue({
             './images/image3.jpg',
             './images/image4.jpg'
         ],
+        timer: 0,
+
 
 
     },
@@ -19,7 +21,18 @@ const root = new Vue({
             return this.currentIndex === index ? 'active' : '';
         },
 
+
+        play() {
+
+            this.timer = setInterval(() => {
+
+                this.increaseIndex();
+
+            }, 3000);
+        },
+
         increaseIndex() {
+
             const maxLength = this.images.length - 1;
             if (this.currentIndex < maxLength) {
                 this.currentIndex++;
@@ -28,7 +41,12 @@ const root = new Vue({
 
                 this.currentIndex = 0;
             }
+
+            this.timerReset();
+
+
         },
+
         decreaseIndex() {
 
             if (this.currentIndex === 0) {
@@ -39,12 +57,26 @@ const root = new Vue({
 
                 this.currentIndex--;
             }
+
+            this.timerReset();
         },
 
         // click on dots to change photo
         currentPhoto(index) {
             this.currentIndex = index;
-        }
+            this.timerReset();
+        },
+
+
+
+        timerReset() {
+            clearInterval(this.timer)
+        },
+
+
+
+
+
     }
 
 })

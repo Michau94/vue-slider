@@ -43,6 +43,10 @@ const root = new Vue({
 
             }
 
+        },
+        isDotActive(index) {
+            return this.currentIndex === index ? 'active' : '';
+
         }
 
 

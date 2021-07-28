@@ -8,8 +8,30 @@ figure>img {
 
 .slider {
     height: 500px;
+    position: relative;
 }
 
 .clickable {
     cursor: pointer;
+}
+
+.dot-section {
+    background-color: rgba(0, 0, 0, .7);
+    padding: 5px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    background-color: white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.dot.active {
+    background-color: dodgerblue;
 }

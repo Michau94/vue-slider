@@ -71,7 +71,7 @@ const root = new Vue({
 
         timerReset() {
             clearInterval(this.timer)
-        },
+        }
 
 
 

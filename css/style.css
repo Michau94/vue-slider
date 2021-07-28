@@ -4,7 +4,22 @@
 
 figure>img {
     display: none;
+    border-radius: 20px 5px;
+    animation: fadeout 3.5s ease; 
     
+}
+
+@keyframes fadeout {
+    0%{
+        opacity:0;
+        
+    }
+    50%{
+        opacity:1; 
+    }
+    100%{
+        opacity:0; 
+    }
 }
 
 figure{

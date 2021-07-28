@@ -9,3 +9,7 @@ figure>img {
 .slider {
     height: 500px;
 }
+
+.clickable {
+    cursor: pointer;
+}

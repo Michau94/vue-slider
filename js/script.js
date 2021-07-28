@@ -8,7 +8,7 @@ const root = new Vue({
             './images/image1.jpg',
             './images/image2.jpg',
             './images/image3.jpg',
-            './images/image4.jpg',
+            './images/image4.jpg'
         ],
 
 
@@ -18,6 +18,32 @@ const root = new Vue({
         isActive(index) {
             return this.currentIndex === index ? 'active' : '';
         },
+
+        increaseIndex() {
+            const maxLength = this.images.length - 1;
+            if (this.currentIndex < maxLength) {
+                this.currentIndex++;
+
+            } else {
+
+                this.currentIndex = 0;
+
+            }
+
+        },
+        decreaseIndex() {
+
+            if (this.currentIndex === 0) {
+                const maxLength = this.images.length - 1;
+                this.currentIndex = maxLength;
+
+            } else {
+
+                this.currentIndex--;
+
+            }
+
+        }
 
 
     }

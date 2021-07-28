@@ -1,1 +1,11 @@
+.active {
+    display: inline-block;
+}
 
+figure>img {
+    display: none;
+}
+
+.slider {
+    height: 500px;
+}

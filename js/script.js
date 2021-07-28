@@ -27,9 +27,7 @@ const root = new Vue({
             } else {
 
                 this.currentIndex = 0;
-
             }
-
         },
         decreaseIndex() {
 
@@ -40,16 +38,13 @@ const root = new Vue({
             } else {
 
                 this.currentIndex--;
-
             }
-
         },
-        isDotActive(index) {
-            return this.currentIndex === index ? 'active' : '';
 
+        // click on dots to change photo
+        currentPhoto(index) {
+            this.currentIndex = index;
         }
-
-
     }
 
 })

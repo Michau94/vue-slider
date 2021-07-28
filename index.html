@@ -30,7 +30,9 @@
                         <img class="img-fluid" v-for="(url, index) in images" :class="isActive(index)" :src="url"
                             :alt="index">
                         <div class="dot-section d-flex justify-content-center align-items-center">
-                            <div v-for="(dot, index) in images" class="dot m-2" :class="isDotActive(index)"></div>
+                            <div v-for="(dot, index) in images" class="dot m-2 clickable" :class="isActive(index)"
+                                @click="currentPhoto(index)">
+                            </div>
                         </div>
                     </figure>
                 </div>

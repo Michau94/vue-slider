@@ -10,9 +10,6 @@ const root = new Vue({
             './images/image3.jpg',
             './images/image4.jpg'
         ],
-        timer: 0,
-
-
 
     },
 
@@ -24,11 +21,7 @@ const root = new Vue({
 
         play() {
 
-            this.timer = setInterval(() => {
-
-                this.increaseIndex();
-
-            }, 3000);
+            this.timerId = setInterval(this.increaseIndex, 3000);
         },
 
         increaseIndex() {
@@ -43,6 +36,7 @@ const root = new Vue({
             }
 
             this.timerReset();
+            this.play();
 
 
         },
@@ -59,24 +53,26 @@ const root = new Vue({
             }
 
             this.timerReset();
+            this.play();
         },
 
         // click on dots to change photo
         currentPhoto(index) {
             this.currentIndex = index;
             this.timerReset();
+            this.play();
         },
 
 
 
         timerReset() {
-            clearInterval(this.timer)
+            clearInterval(this.timerId)
         }
 
+    },
 
-
-
-
+    created() {
+        this.play();
     }
 
 })
